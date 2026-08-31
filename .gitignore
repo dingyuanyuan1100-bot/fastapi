@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual environment
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+
+# Environment / secrets
+.env
+
+# Databases
+*.db
+*.sqlite3
+
+# Aerich sqlite db if any
+data1/*.db
