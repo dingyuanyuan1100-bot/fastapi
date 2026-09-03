@@ -13,9 +13,7 @@ async def read_item(item_id: int, q: str):
         "item_id": item_id,
         "q": q
     }
-
-#请求头请求
-class Item(BaseModel):
+ #请求头请求
     item_id: int
     description: str
     price: float

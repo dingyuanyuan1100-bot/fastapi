@@ -8,11 +8,11 @@ TORTOISE_ORM: Dict={
     #开发环境使用SQLite(基于文件，无需服务器)
     #“default”:"sqlite//db.sqlite3"
     #开发环境使用Mysql
-    "connections":{"default":"mysql://root:123456@127.0.0.1:3306/fastapi_db"},
+    "connections":{"default":"mysql://root:123456@127.0.0.1:3306/fastapi_db1"},
     "apps":{
         "models": {
             #模型模块和 Aerich 迁移模块
-            "models": ["model.model1","aerich.models"],
+            "models": ["model.model2","aerich.models"],
             "default_connection": "default",
         }
     },
@@ -45,7 +45,7 @@ if __name__ == '__main__':
 aerich init -t "在执行这个指令终端到nodel的相对路径"   生成的迁移文件在当前终端下面(注意中文乱码问题！！！)
 
 # 2.初始化数据库，根据模型生成表结构，生成初始迁移文件
-aerich init-db  #注意是英文减号不是-
+aerich init-db   #注意是英文减号不是-
 
 # 3.模型改动后，生成迁移脚本（相当于makemigrations）
 aerich migrate --name "注释"  （改变迁移迁移模型后才生效）
@@ -57,7 +57,7 @@ aerich upgrade
 aerich downgrade --version 版本号
 
 # 6.查看迁移历史
-aerich history
+aerich history  需要先装 pip install cryptography
 
 # 7.查看还没执行的迁移
 aerich heads
