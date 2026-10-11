@@ -1,4 +1,4 @@
-from tortoise import Model
+from tortoise.models import Model
 from tortoise.fields import CharField, DatetimeField, DateField, BooleanField, IntField
 
 

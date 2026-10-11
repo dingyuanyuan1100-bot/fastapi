@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CORS Test</title>
+</head>
+<body>
+    <h1>CORS 测试</h1>
+    <button onclick="testCors()">测试CORS</button>
+    <p id="result">这块儿显示响应</p>
+    <script>
+        async function testCors() {
+            try {
+                // 请求后端：http://127.0.0.1:8000/info
+                const response = await fetch('http://127.0.0.1:8000/info', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                const data = await response.json();
+                document.getElementById('result').textContent = 'Success: ' + JSON.stringify(data);
+            } catch (error) {
+                document.getElementById('result').textContent = 'Error: ' + error.message;
+            }
+        }
+    </script>
+</body>
+</html>
